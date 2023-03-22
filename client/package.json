@@ -1,7 +1,9 @@
 {
   "name": "client",
+  "homepage": "https://dall-e-v2.com",
+  "description": "DALL-E 2.0 made in India",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "engines": {
     "node": ">=14 <15"
