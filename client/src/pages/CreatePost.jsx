@@ -76,6 +76,10 @@ const CreatePost = () => {
     }
   }
 
+  const navigateHome = () => {
+    navigate('/');
+  }
+
   return (
     <section className='max-w-7xl mx-auto'>
       <div>
@@ -138,8 +142,10 @@ const CreatePost = () => {
 
         <div className='mt-10'>
           <p className='mt-2 text-[#666e75] text-[14px]'>Once you have created the image you want, you can share it with others in the community</p>
-          <button type='Submit' className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'>
+          <button type='Submit' className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-3'>
             {loading ? 'Sharing...' : 'Share'}
+          </button>
+          <button onClick={navigateHome} className='mt-3 text-[#6469ff] bg-transparent border border-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center min-w-min'>Back to Community
           </button>
         </div>
       </form>
