@@ -52,7 +52,7 @@ const CreatePost = () => {
     setForm({...form, prompt: randomPrompt})
   }
   const generateImage = async() => {
-    if(form.prompt){
+    if(form.prompt && form.name){
       try {
         setGeneratingImg(true);
         const response = await fetch('https://dall-e-clone-g2ed.onrender.com/api/v1/dalle', {
@@ -64,6 +64,15 @@ const CreatePost = () => {
         })
 
           const data = await response.json();
+          console.log(data.status);
+          if(data.status != undefined && data.status != 200){
+            setForm({
+              name: '',
+              prompt: '',
+              photo: ''
+            });
+            throw Error('Please try some other prompt!')
+          }
           setForm({...form, photo: `data:image/jpeg;base64,${data.photo}`})
       } catch (error) {
         alert(error);
@@ -72,7 +81,7 @@ const CreatePost = () => {
       }
     }
     else{
-      alert("Please enter a prompt");
+      alert("Please enter details");
     }
   }
 
@@ -96,6 +105,7 @@ const CreatePost = () => {
             placeholder="John Doe"
             value={form.name}
             handleChange={handleChange}
+            required
           />
           <FormField
             labelName="Prompt"
@@ -106,6 +116,7 @@ const CreatePost = () => {
             isSurpriseMe
             handleChange={handleChange}
             handleSurpriseMe={handleSurpriseMe}
+            required
           />
           <div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center'>
             {form.photo ? (
