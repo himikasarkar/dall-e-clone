@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { preview } from '../assets'
 import {getRandomPrompt} from '../utils'
@@ -15,13 +16,16 @@ const CreatePost = () => {
   });
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
+  const recaptchaRef = useRef(null)
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
+    const captchaToken = await recaptchaRef.current.executeAsync();
+    recaptchaRef.current.reset();
     if(form.prompt && form.photo){
       setLoading(true);
-
+      form['token'] = captchaToken;
+      console.log(form);
       try{
         const response = await fetch('https://dall-e-clone-g2ed.onrender.com/api/v1/post', {
           method: 'POST',
@@ -64,7 +68,6 @@ const CreatePost = () => {
         })
 
           const data = await response.json();
-          console.log(data.status);
           if(data.status != undefined && data.status != 200){
             setForm({
               name: '',
@@ -97,6 +100,11 @@ const CreatePost = () => {
       </div> 
 
       <form className='mt-16 max-w-3xl' onSubmit={handleSubmit}>
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey="6LflzyQlAAAAADCtB1QVVbaPzMkkoOlfTIIdeJYy"
+          size="invisible"
+        />
         <div className='flex flex-col gap-5'>
           <FormField
             labelName="Your name"
@@ -124,12 +132,16 @@ const CreatePost = () => {
                 src={form.photo}
                 alt={form.prompt}
                 className="w-full h-full object-contain"
+                width="1000"
+                height="1000"
               />
             ): (
               <img
                 src={preview}
                 alt="preview"
                 className='w-9/12 h-9/12 object-contain opacity-40'
+                width="750"
+                height="750"
               />
             )}
 
@@ -145,7 +157,8 @@ const CreatePost = () => {
           <button
             type='button'
             onClick={generateImage}
-            className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5'
+            disabled={generatingImg}
+            className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 disabled:opacity-70'
           >
             {generatingImg ? 'Generating...' : 'Generate Image'}
           </button>
@@ -153,7 +166,7 @@ const CreatePost = () => {
 
         <div className='mt-10'>
           <p className='mt-2 text-[#666e75] text-[14px]'>Once you have created the image you want, you can share it with others in the community</p>
-          <button type='Submit' className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-3'>
+          <button type='Submit' className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-3 disabled:opacity-70' disabled={loading}>
             {loading ? 'Sharing...' : 'Share'}
           </button>
           <button onClick={navigateHome} className='mt-3 text-[#6469ff] bg-transparent border border-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center min-w-min'>Back to Community
