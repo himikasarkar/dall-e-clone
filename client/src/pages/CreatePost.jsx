@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha"
+import emailjs from 'emailjs-com'
 
 import { preview } from '../assets'
 import {getRandomPrompt} from '../utils'
@@ -25,7 +26,6 @@ const CreatePost = () => {
     if(form.prompt && form.photo){
       setLoading(true);
       form['token'] = captchaToken;
-      console.log(form);
       try{
         const response = await fetch('https://dall-e-clone-g2ed.onrender.com/api/v1/post', {
           method: 'POST',
@@ -36,6 +36,19 @@ const CreatePost = () => {
         })
 
         await response.json();
+
+        //send email 
+        const templateParams = {
+          from_name: form.name,
+          to_name: "Himika",
+          prompt: form.prompt
+        }
+        emailjs.send('service_181jzni','template_q0fiqdb', templateParams, 'W4pKE_wPnDrA45cNl')
+        .then((res)=> {
+          console.log('Email response: ', res);
+        }, (err) => {
+          console.log('Email err: ', err);
+        })
         navigate('/');
       }catch(err){
         alert(err);
