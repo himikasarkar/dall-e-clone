@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha"
+import emailjs from 'emailjs-com'
 
 import { preview } from '../assets'
 import {getRandomPrompt} from '../utils'
@@ -35,6 +36,19 @@ const CreatePost = () => {
         })
 
         await response.json();
+
+        //send email 
+        const templateParams = {
+          from_name: form.name,
+          to_name: "Himika",
+          prompt: form.prompt
+        }
+        emailjs.send('service_181jzni','template_q0fiqdb', templateParams, 'W4pKE_wPnDrA45cNl')
+        .then((res)=> {
+          console.log('Email response: ', res);
+        }, (err) => {
+          console.log('Email err: ', err);
+        })
         navigate('/');
       }catch(err){
         alert(err);
