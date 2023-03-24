@@ -25,7 +25,6 @@ const CreatePost = () => {
     if(form.prompt && form.photo){
       setLoading(true);
       form['token'] = captchaToken;
-      console.log(form);
       try{
         const response = await fetch('https://dall-e-clone-g2ed.onrender.com/api/v1/post', {
           method: 'POST',
