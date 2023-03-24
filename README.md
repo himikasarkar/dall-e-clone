@@ -24,6 +24,8 @@
     <a href="https://github.com/himikasarkar/dall-e-clone/issues">Report Bug</a>
     ·
     <a href="https://github.com/himikasarkar/dall-e-clone/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/himikasarkar/dall-e-clone/discussions/new/choose">Start a discussion</a>
   </p>
 </div>
 
@@ -68,17 +70,17 @@
 
 ## Features
 
-- **All Hackathons At One Place** - Contains List of All hackathons at one place
-- **Finding Developers Made Easy** - Broad and Efficient Search Algorithm to find developers to collaborate with
-- **Chat** - In app chat feature 
-- **Strong Security System** - End to End Encrypted Messages and Google OAuth for Authentication.
+- **All generated Art in one place** - Contains List of All AI generated artwork at one place for contributers to view
+- **Search** - Contributers can search to filter out art based on 'prompt' and 'name'
+- **Integration with OpenAI** - It helps to generate images based on prompts passed by contributors
+- **Google ReCAPTCHA** - Prevents from BOT attacks
 
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-Setup PartnersInCrime on your local machine using these simple steps:
+Setup **DALL-E v2** on your local machine using these simple steps:
 
 ### Prerequisites
 
@@ -87,19 +89,38 @@ Setup PartnersInCrime on your local machine using these simple steps:
   npm install npm@latest -g
   ```
 
-### Installation
->For Frontend
+### Installation & Running
 - Fork the repo
 - Clone the repo
    ```sh
-   git clone https://github.com/your_username_/partners-in-crime.git
+   git clone https://github.com/<YOUR_USERNAME>/dall-e-clone.git
+   ```
+> Frontend
+- Enter client folder
+   ```sh
+   cd client/
    ```
 - Install NPM packages
    ```sh
    npm install
    ```
->For Backend
-- Visit [partners-in-crime-backend](https://github.com/shashank1503-cipher/partners-in-crime-backend) for backend repository
+- Run Frontend
+   ```sh
+   npm run dev
+   ```
+> Backend
+- Enter server folder
+   ```sh
+   cd server/
+   ```
+- Install NPM packages
+   ```sh
+   npm install
+   ```
+- Run Backend
+  ```sh
+  npm start
+  ```
 
 <!-- CONTRIBUTING -->
 
@@ -126,21 +147,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Shashank Kumar Srivastava - [@Shashan87956421](https://twitter.com/Shashan87956421) - [Linkedin](https://www.linkedin.com/in/shashank-srivastava-a72899201/) - shashank.srivastava25sks@gmail.com
-
-Akarsh Pandey - [Linkedin](https://www.linkedin.com/in/akarsh-pandey-238b471b0/) - akarshpandey20bcs83@iiitkottayam.ac.in
-
-Bhavya Goyal - [Linkedin](https://www.linkedin.com/in/bhavya-goyal-832418203/) - bhavyagoyal54@gmail.com
-
-Ishaan Mahesh - [Linkedin](https://www.linkedin.com/in/ishaan-mahesh/) - ishaanmahesh20bcs54@iiitkottayam.ac.in
-
-Project Link: [https://github.com/shashank1503-cipher/partners-in-crime](https://github.com/shashank1503-cipher/partners-in-crime)
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- [React Icons](https://react-icons.github.io/react-icons/search)
+Himika Sarkar - [Linkedin](https://www.linkedin.com/in/himikasofficial/) - himikas.work@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
