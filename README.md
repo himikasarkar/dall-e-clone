@@ -9,21 +9,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://partners-in-crime.vercel.app/">
-    <img src="https://res.cloudinary.com/dpjf6btln/image/upload/v1658199451/Studio_Project_uaunvd.png" alt="Logo" >
+  <a href="https://dall-e-v2.com">
+    <img src="https://res.cloudinary.com/djbel5nti/image/upload/v1679473593/czljgp9bgdnrnkkkhbd8.webp" alt="Logo" height=400 width=400>
   </a>
 
-  <h3 align="center">&lt;partnersInCrime&gt;</h3>
+  <h3 align="center">~ Dall-E V2 ~</h3>
 
   <p align="center">
-    To bring developers together from the same college to collaborate.
+    Deliver and showcase high quality AI generated images for free.
    </p>
    <p align="center">
-    <a href="https://partners-in-crime.vercel.app/">View Demo</a>
+    <a href="https://dall-e-v2.com">View Demo</a>
     ·
-    <a href="https://github.com/shashank1503-cipher/partners-in-crime/issues">Report Bug</a>
+    <a href="https://github.com/himikasarkar/dall-e-clone/issues">Report Bug</a>
     ·
-    <a href="https://github.com/shashank1503-cipher/partners-in-crime/issues">Request Feature</a>
+    <a href="https://github.com/himikasarkar/dall-e-clone/issues">Request Feature</a>
   </p>
 </div>
 
@@ -31,34 +31,39 @@
 
 ## About The Project
 
-<img src="https://res.cloudinary.com/dpjf6btln/image/upload/v1658199960/Landing_page_f2kkmz.png" alt="Landing page">
+<img src="https://res.cloudinary.com/djbel5nti/image/upload/v1679663705/landing_page_kkxf3z.webp" alt="Landing page">
 </img>
 
-&lt;partnersInCrime&gt; is a web platform specially designed for IIIT-K students which aims at facilitating smooth interaction between the college-mates regarding all the collaborative projects and hackathons held on various platforms.
-
+<b>DALL-E v2</b> is a web platform specially designed for folks who want to leverage AI to generate high quality images for free offered by OpenAI models.
 ### Screenshots
+<h4>Create Post Page</h4>
 
-![image](https://user-images.githubusercontent.com/54381338/181453334-de6509ab-12ce-462c-96fa-f7e2bb7182a9.png)
+![image](https://res.cloudinary.com/djbel5nti/image/upload/v1679663703/create_post_rfzpoq.png)
 
-![image](https://user-images.githubusercontent.com/54381338/181453449-24ba4b55-925a-43a9-8e4c-06f83b3b1b06.png)
+<h4>Enter details and click 'Generate Image'</h4>
 
-![image](https://user-images.githubusercontent.com/54381338/181453517-446c6f2f-d05e-48d3-8f80-9fc39fc0defc.png)
+![image](https://res.cloudinary.com/djbel5nti/image/upload/v1679663704/creating_post_l1kqz1.png)
 
-![image](https://user-images.githubusercontent.com/54381338/181453603-13bcb750-2fbb-40d1-a554-6004912927ec.png)
+<h4>Preview of generated image</h4>
 
-![image](https://user-images.githubusercontent.com/54381338/181453770-ed9f16f4-9fad-4778-b579-23aec42e4256.png)
+![image](https://res.cloudinary.com/djbel5nti/image/upload/v1679663704/created_post_iswcqh.png)
 
-![image](https://user-images.githubusercontent.com/54381338/181453858-2385f0f4-45c1-403b-9334-928d3f379704.png)
+<h4>Click 'Share' to add your image to Community Wall</h4>
 
-![image](https://user-images.githubusercontent.com/54381338/181453967-afeff934-ed7a-41c3-bc3e-faf9a86019fa.png)
+![image](https://res.cloudinary.com/djbel5nti/image/upload/v1679663704/sharing_post_vhtd39.png)
+
+<h4>View shared image on Community Wall</h4>
+
+![image](https://res.cloudinary.com/djbel5nti/image/upload/v1679663727/shared_post_haqalo.png)
+
 
 
 
 ### Built With
 
 - [React.js](https://reactjs.org/)
-- [Chakra-UI](https://chakra-ui.com/)
-- [FastAPI](https://fastapi.tiangolo.com/)
+- [Tailwind CSS](https://tailwindui.com/)
+- [ExpressJS](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 
 ## Features
