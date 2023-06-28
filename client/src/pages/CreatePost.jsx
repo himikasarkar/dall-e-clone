@@ -170,22 +170,24 @@ const CreatePost = () => {
           <button
             type='button'
             onClick={generateImage}
-            disabled={generatingImg}
+            // disabled={generatingImg}
+            disabled={true}
             className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 disabled:opacity-70'
           >
             {generatingImg ? 'Generating...' : 'Generate Image'}
           </button>
         </div>
+        <div>
+        <p className='mt-5 text-xs tracking-wide text-red-400'>Free trial has ended, thanks for your support! &#128156;&#128156;&#128156;</p>
+        </div>
 
-        <div className='mt-10'>
-          <p className='mt-2 text-[#666e75] text-[14px]'>Once you have created the image you want, you can share it with others in the community</p>
-          <button type='Submit' className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-3 disabled:opacity-70' disabled={loading}>
-            {loading ? 'Sharing...' : 'Share'}
-          </button>
+        <div className='mt-5'>
           <button onClick={navigateHome} className='mt-3 text-[#6469ff] bg-transparent border border-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center min-w-min'>Back to Community
           </button>
         </div>
       </form>
+
+      
     </section>
   )
 }
